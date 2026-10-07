@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Digital Business Card</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="profile-card">
+
+    <!-- ================================
+         VIDEO BANNER
+    ================================= -->
+
+    <section class="banner">
+
+      <video
+        id="bannerVideo"
+        class="banner-video"
+        autoplay
+        loop
+        playsinline
+        preload="metadata"
+      >
+
+        <source
+          src="videos/banner.mp4"
+          type="video/mp4"
+        >
+
+        Your browser does not support video.
+
+      </video>
+
+      <div class="videos/banner-overlay"></div>
+
+    </section>
+
+
+
+
+    <!-- ================================
+         PROFILE
+    ================================= -->
+
+    <section class="profile-section">
+
+      <!-- Profile Photo -->
+
+     <div class="profile-photo">
+
+  <video
+    class="profile-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+  >
+    <source
+      src="videos/profile.mp4"
+      type="video/mp4"
+    >
+  </video>
+
+</div>
+
+
+      <!-- Name -->
+
+      <h1>
+        BENNETAWAN
+      </h1>
+
+
+      <!-- Job -->
+
+      <p class="job-title">
+  BENNEGO
+</p>
+
+
+
+<p class="description">
+  BENNELEWALA
+</p>
+
+
+      <!-- ================================
+           SAVE CONTACT
+      ================================= -->
+
+    
+
+      <!-- ================================
+           SOCIAL LINKS
+      ================================= -->
+
+      <div class="social-links">
+
+
+        <!-- Facebook -->
+
+       <!-- Facebook -->
+<a
+  href="https://www.facebook.com/JOHNTAPCARD"
+  class="social"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span class="social-icon">
+    <img src="images/facebook.png" alt="Facebook">
+  </span>
+
+  <span class="social-name">
+    Facebook
+  </span>
+
+  <span class="arrow">
+    ›
+  </span>
+</a>
+
+
+<!-- TikTok -->
+<a
+  href="https://www.tiktok.com/@johntapcard"
+  class="social"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span class="social-icon">
+    <img src="images/tiktok.png" alt="TikTok">
+  </span>
+
+  <span class="social-name">
+    TikTok
+  </span>
+
+  <span class="arrow">
+    ›
+  </span>
+</a>
+
+
+<!-- Instagram -->
+<a
+  href="https://www.instagram.com/johntapcard/"
+  class="social"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span class="social-icon">
+    <img src="images/instagram.png" alt="Instagram">
+  </span>
+
+  <span class="social-name">
+    Instagram
+  </span>
+
+  <span class="arrow">
+    ›
+  </span>
+</a>
+      </div>
+
+
+      <!-- ================================
+           FOOTER
+      ================================= -->
+
+      <footer class="footer">
+
+        <span class="powered">
+          POWERED BY
+        </span>
+
+        <span class="brand">
+          JOHNTAPCARD
+        </span>
+
+      </footer>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================================
+       JAVASCRIPT
+  ================================= -->
+
+  <script>
+
+    const video =
+      document.getElementById("bannerVideo");
+
+
+    let videoStarted = false;
+
+
+    function startVideo() {
+
+      if (videoStarted) {
+        return;
+      }
+
+
+      videoStarted = true;
+
+
+      /*
+        Turn sound ON
+      */
+
+      video.muted = false;
+
+      video.volume = 1;
+
+
+      /*
+        Play video
+      */
+
+      video.play().catch(() => {
+
+        /*
+          Browser blocked playback.
+          Allow another interaction.
+        */
+
+        videoStarted = false;
+
+      });
+
+    }
+
+
+    /*
+      Desktop
+    */
+
+    document.addEventListener(
+      "click",
+      startVideo,
+      {
+        once: true
+      }
+    );
+
+
+    /*
+      Mobile
+    */
+
+    document.addEventListener(
+      "touchstart",
+      startVideo,
+      {
+        once: true
+      }
+    );
+
+
+    /*
+      Pointer devices
+    */
+
+    document.addEventListener(
+      "pointerdown",
+      startVideo,
+      {
+        once: true
+      }
+    );
+
+  </script>
+
+</body>
+
+</html>
